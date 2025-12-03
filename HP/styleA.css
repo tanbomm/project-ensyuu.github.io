@@ -1,0 +1,159 @@
+/* 全体 */
+body {
+  font-family: "Yu Gothic", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+/* ヘッダー */
+header {
+  background: linear-gradient(to right, #ffcc00, #ff9900);
+  text-align: center;
+  padding: 2em 1em;
+  position: relative;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 2.8em;
+  margin: 0;
+  text-shadow: 1px 1px 2px #d35400;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
+/* 波型の区切り */
+header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: url('wave.svg') repeat-x;
+  background-size: contain;
+}
+
+/* グリッドメニュー */
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  padding: 3em 2em;
+}
+
+/* メニューボックス */
+.menu-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2em;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.menu-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* 色分け（任意） */
+.menu-box:nth-child(1) {
+  border-top: 8px solid #4fc3f7;
+}
+.menu-box:nth-child(2) {
+  border-top: 8px solid #81c784;
+}
+.menu-box:nth-child(3) {
+  border-top: 8px solid #ffb74d;
+}
+.menu-box:nth-child(4) {
+  border-top: 8px solid #ba68c8;
+}
+
+.menu-box h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.menu-box p {
+  font-size: 1em;
+  margin-bottom: 1.2em;
+}
+
+/* ボタン */
+.btn {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background-color: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #f57c00;
+}
+.action-buttons {
+  display: flex;
+  justify-content: center;   /* 中央揃え */
+  align-items: center;
+  gap: 2em;                  /* ボタン間の余白 */
+  margin: 3em auto;
+  flex-wrap: wrap;           /* スマホで折り返し可能に */
+}
+
+.action-buttons .btn {
+  min-width: 150px;
+  text-align: center;
+}
+
+/* フッター */
+footer {
+  background-color: #ffe0b2;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+  color: #555;
+}
+.map-display {
+  text-align: center;
+  margin-top: 2em;
+}
+
+#main-map {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.map-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin: 1.5em 0;
+}
+
+.thumb {
+  width: 100px;
+  height: auto;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: opacity 0.3s;
+}
+
+.thumb.active {
+  opacity: 1;
+  box-shadow: 0 0 5px #ff9800;
+}

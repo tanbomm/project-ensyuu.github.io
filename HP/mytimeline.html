@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>わが家の避難計画 マイ・タイムライン作成ツール</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body class="page-timeline">
+    <header>
+        <h1>マイ・タイムライン</h1>
+    </header>
+
+    <div class="action-buttons">
+        <button id="saveButton">一時保存</button>
+        <button id="loadButton">復元</button>
+        <button id="printButton">印刷</button>
+    </div>
+    <main id="timelineForm"> <section class="basic-info grid-container">
+            <div class="grid-item">
+                <h2>家族の情報</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>氏名</th>
+                            <th>年齢</th>
+                            <th>連絡先</th>
+                            <th>その他（持病など）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" placeholder="（例）防災 太郎" data-id="name1"></td>
+                            <td><input type="number" placeholder="42" data-id="age1"></td>
+                            <td><input type="tel" placeholder="090-XXXX-XXXX" data-id="tel1"></td>
+                            <td><input type="text" data-id="other1"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="（例）防災 花子" data-id="name2"></td>
+                            <td><input type="number" placeholder="40" data-id="age2"></td>
+                            <td><input type="tel" data-id="tel2"></td>
+                            <td><input type="text" data-id="other2"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="（例）防災 幸子" data-id="name3"></td>
+                            <td><input type="number" placeholder="14" data-id="age3"></td>
+                            <td><input type="tel" data-id="tel3"></td>
+                            <td><input type="text" data-id="other3"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="（例）防災 正子" data-id="name4"></td>
+                            <td><input type="number" placeholder="72" data-id="age4"></td>
+                            <td><input type="tel" data-id="tel4"></td>
+                            <td><input type="text" placeholder="持病あり" data-id="other4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid-item">
+                <h2>避難に支援が必要な人は？</h2>
+                <p>（高齢者・障がい者・妊婦・乳幼児など）</p>
+                <label><input type="radio" name="support" value="yes" data-id="support_yes"> いる</label>
+                <textarea rows="2" placeholder="（例）祖母：正子（72歳）" data-id="support_detail"></textarea>
+                <p><strong>→ レベル3「高齢者等避難」で避難！</strong></p>
+                <br>
+                <label><input type="radio" name="support" value="no" data-id="support_no"> いない</label>
+                <p><strong>→ レベル4「避難指示」までに避難！</strong></p>
+            </div>
+        </section>
+
+        <section class="hazard-info grid-container">
+            <div class="grid-item">
+                <h2>ハザードマップでチェック</h2>
+                <h3>自宅の危険度は？</h3>
+                
+                <h4>【水害】（浸水想定区域）</h4>
+                <label><input type="radio" name="flood" value="yes" data-id="flood_yes"> 洪水あり</label>
+                <input type="text" class="short-input" placeholder="（例）2m" data-id="flood_detail">
+                <br>
+                <label><input type="radio" name="storm-surge" value="yes" data-id="surge_yes"> 高潮あり</label>
+                <input type="text" class="short-input" placeholder="（例）3m" data-id="surge_detail">
+                <br>
+                <label><input type="radio" name="flood" value="no" data-id="flood_no"> 浸水なし</label>
+
+                <h4>【土砂災害】（土砂災害警戒区域）</h4>
+                <label><input type="radio" name="landslide" value="yes" data-id="landslide_yes"> あり</label>
+                <label><input type="radio" name="landslide" value="no" data-id="landslide_no"> なし</label>
+            </div>
+
+            <div class="grid-item">
+                <h2>避難先</h2>
+                <ul class="checklist">
+                    <li><label><input type="checkbox" data-id="dest_shelter_check"> 指定緊急避難場所</label> <input type="text" placeholder="（例）○○公民館" data-id="dest_shelter_text"></li>
+                    <li><label><input type="checkbox" data-id="dest_relative_check"> 親戚や知人の家</label> <input type="text" placeholder="（例）妻の実家" data-id="dest_relative_text"></li>
+                    <li><label><input type="checkbox" data-id="dest_building_check"> 頑丈な建物（マンションなど）</label></li>
+                    <li><label><input type="checkbox" data-id="dest_hotel_check"> 宿泊施設など</label> <input type="text" placeholder="（例）○○ホテル" data-id="dest_hotel_text"></li>
+                    <li><label><input type="checkbox" data-id="dest_home_check"> 自宅の上階（垂直避難）</label></li>
+                    <li><label><input type="checkbox" data-id="dest_other_check"> その他</label> <input type="text" placeholder="（例）○○公園で車中泊" data-id="dest_other_text"></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="prep-info grid-container">
+            <div class="grid-item">
+                <h2>情報の入手方法</h2>
+                <ul class="checklist">
+                    <li><label><input type="checkbox" data-id="info_tv"> TV・ラジオ</label></li>
+                    <li><label><input type="checkbox" data-id="info_web"> 自治体ホームページ（例：福岡市HP）</label></li>
+                    <li><label><input type="checkbox" data-id="info_mail"> 防災メール（例：福岡市防災メール）</label></li>
+                    <li><label><input type="checkbox" data-id="info_line"> 自治体LINE公式アカウント</label></li>
+                    <li><label><input type="checkbox" data-id="info_app"> 防災アプリ（例：ツナガル+）</label></li>
+                    <li><label><input type="checkbox" data-id="info_jma"> 気象庁ホームページ</label></li>
+                    <li><label><input type="checkbox" data-id="info_other_check"> その他</label> <input type="text" data-id="info_other_text"></li>
+                </ul>
+            </div>
+
+            <div class="grid-item">
+                <h2>非常時持出品の例</h2>
+                <ul class="checklist two-column">
+                    <li><label><input type="checkbox" data-id="item_food"> 食料・飲料水</label></li>
+                    <li><label><input type="checkbox" data-id="item_med"> 常備薬・救急セット</label></li>
+                    <li><label><input type="checkbox" data-id="item_cash"> 現金・身分証明書</label></li>
+                    <li><label><input type="checkbox" data-id="item_light"> 懐中電灯</label></li>
+                    <li><label><input type="checkbox" data-id="item_radio"> 携帯ラジオ</label></li>
+                    <li><label><input type="checkbox" data-id="item_battery"> モバイルバッテリー</label></li>
+                    <li><label><input type="checkbox" data-id="item_glasses"> メガネ・コンタクト</label></li>
+                    <li><label><input type="checkbox" data-id="item_clothes"> 着替え・下着</label></li>
+                    <li><label><input type="checkbox" data-id="item_rain"> 雨具</label></li>
+                    <li><label><input type="checkbox" data-id="item_towel"> タオル・毛布</label></li>
+                    <li><label><input
+type="checkbox" data-id="item_bag"> ビニール袋</label></li>
+                    <li><label><input type="checkbox" data-id="item_toilet"> 携帯用トイレ</label></li>
+                    <li><label><input type="checkbox" data-id="item_baby"> 乳児用ミルク・おむつ</label></li>
+                    <li><label><input type="checkbox" data-id="item_mask"> 生理用品・マスク</label></li>
+                </ul>
+                <hr>
+                <label><strong>その他、わが家で必要な物</strong></label>
+                <textarea rows="2" placeholder="（例）ペットのエサ、ペット用トイレ" data-id="item_custom"></textarea>
+            </div>
+            
+            <div class="grid-item">
+                <h2>緊急時の連絡先リスト</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" placeholder="（例）○○公民館" data-id="contact_name1"></td>
+                            <td><input type="tel" placeholder="○○○-○○○○" data-id="contact_tel1"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="（例）○○区役所" data-id="contact_name2"></td>
+                            <td><input type="tel" placeholder="○○○-○○○○" data-id="contact_tel2"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="（例）親戚" data-id="contact_name3"></td>
+                            <td><input type="tel" placeholder="○○○-○○○○" data-id="contact_tel3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid-item">
+                <h2>独自の避難タイミング</h2>
+                <p>（あれば記入）</p>
+                <textarea rows="3" placeholder="（例）自宅前の側溝から水が溢れ出したとき" data-id="custom_timing"></textarea>
+            </div>
+        </section>
+
+        <section class="timeline">
+            <h2>タイムライン（避難の準備や開始のタイミング）</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>警戒<br>レベル</th>
+                        <th>状況</th>
+                        <th>取るべき行動</th>
+                        <th>備え・家族の行動</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="level-1">
+                        <td><strong>レベル 1</strong><br>早期注意情報</td>
+                        <td>今後気象状況悪化のおそれ</td>
+                        <td>災害への心構えを高める</td>
+                        <td>
+                            <textarea rows="4" placeholder="（例）
+■備え
+・天気予報のチェック
+・非常持出品などの確認
+■家族の行動
+・全員：家の周りを片付ける
+・太郎：天気予報チェック
+・花子：備蓄品のチェック" data-id="timeline1"></textarea>
+                        </td>
+                    </tr>
+                    <tr class="level-2">
+                        <td><strong>レベル 2</strong><br>大雨・洪水・<br>高潮注意報</td>
+                        <td>気象状況悪化</td>
+                        <td>自らの避難行動の確認</td>
+                        <td>
+                            <textarea rows="4" placeholder="（例）
+■備え
+・避難場所、経路の再確認
+・川や道路の状況確認
+■家族の行動
+・太郎：避難情報・警戒レベルの確認
+・花子：避難所や経路の再確認
+・全員：非常持出品を準備" data-id="timeline2"></textarea>
+                        </td>
+                    </tr>
+                    <tr class="level-3">
+                        <td><strong>レベル 3</strong><br><strong>高齢者等避難</strong></td>
+                        <td>災害のおそれあり</td>
+                        <td class="action-highlight"><strong>危険な場所から<br>高齢者等は避難！</strong></td>
+                        <td>
+                            <textarea rows="4" placeholder="（例）
+■家族の行動
+・花子・正子：避難開始
+（車で移動5分 ○○小学校へ）
+・太郎：幸子・元気の避難準備" data-id="timeline3"></textarea>
+                        </td>
+                    </tr>
+                    <tr class="level-4">
+                        <td><strong>レベル 4</strong><br><strong>避難指示</strong></td>
+                        <td>災害のおそれ高い</td>
+                        <td class="action-highlight"><strong>危険な場所から<br>全員避難！</strong><br><small>※このレベルまでに必ず避難</small></td>
+                        <td>
+                            <textarea rows="5" placeholder="（例）
+■家族の行動
+・太郎・幸子・元気：避難開始
+（徒歩で移動15分 ○○小学校へ）
+・太郎：ガスの元栓を閉める、ブレーカーを切る
+・幸子：ドアや窓の鍵をかける
+・全員：親戚に避難したことを連絡" data-id="timeline4"></textarea>
+                        </td>
+                    </tr>
+                    <tr class="level-5">
+                        <td><strong>レベル 5</strong><br><strong>緊急安全確保</strong></td>
+                        <td>災害発生<br>又は切迫</td>
+                        <td class="action-danger"><strong>命の危険！<br>直ちに安全確保を！</strong></td>
+                        <td>
+                            <p class="small-note">※レベル4までに避難できなかった場合</p>
+                            <textarea rows="4" placeholder="（例）
+■家族の行動
+・全員：自宅の上階に避難する
+・全員：がけから離れた部屋に移動
+・全員：危険が迫ったら救助を求める（119番）" data-id="timeline5"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <div class="bottom-nav">
+        <a href="index.html" class="btn-home">トップページに戻る</a>
+    </div>
+    <footer>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

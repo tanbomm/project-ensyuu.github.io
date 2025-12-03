@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>わが家の避難計画（確認画面）</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-evaluation">
+
+    <header>
+        <h1>マイ･タイムライン（確認画面）</h1>
+    
+    </header>
+
+    <div class="action-buttons">
+        <a href="timeline.html" class="btn-edit">計画を編集に戻る</a>
+        <button id="printButton">この計画を印刷</button>
+    </div>
+
+    <main class="evaluation-grid">
+        
+        <section class="eval-box full-width">
+            <h2>家族の情報</h2>
+            <table class="family-table">
+                <thead>
+                    <tr>
+                        <th>氏名</th>
+                        <th>年齢</th>
+                        <th>連絡先</th>
+                        <th>その他（持病など）</th>
+                    </tr>
+                </thead>
+                <tbody id="eval-family-table">
+                    </tbody>
+            </table>
+        </section>
+
+        <section class="eval-box">
+            <h2>避難に支援が必要な人</h2>
+            <p id="eval-support">---</p>
+        </section>
+
+        <section class="eval-box">
+            <h2>自宅の危険度（ハザードマップ）</h2>
+            <dl>
+                <dt>水害（洪水・高潮）</dt>
+                <dd id="eval-flood">---</dd>
+                <dt>土砂災害</dt>
+                <dd id="eval-landslide">---</dd>
+            </dl>
+        </section>
+
+        <section class="eval-box">
+            <h2>避難先</h2>
+            <ul id="eval-dest-list" class="checklist">
+                </ul>
+        </section>
+
+        <section class="eval-box">
+            <h2>情報の入手方法</h2>
+            <ul id="eval-info-list" class="checklist">
+                </ul>
+        </section>
+
+        <section class="eval-box">
+            <h2>非常時持出品</h2>
+            <ul id="eval-item-list" class="checklist">
+                </ul>
+            <h3>その他、わが家で必要な物</h3>
+            <p id="eval-item-custom">---</p>
+        </section>
+
+        <section class="eval-box">
+            <h2>緊急時の連絡先</h2>
+            <table class="contact-table">
+                <tbody id="eval-contact-table">
+                    </tbody>
+            </table>
+        </section>
+
+        <section class="eval-box full-width">
+            <h2>独自の避難タイミング</h2>
+            <p id="eval-custom-timing">---</p>
+        </section>
+
+        <section class="eval-box full-width">
+            <h2>タイムライン</h2>
+            <table class="timeline">
+                <thead>
+                    <tr>
+                        <th>警戒<br>レベル</th>
+                        <th>状況</th>
+                        <th>取るべき行動</th>
+                        <th>備え・家族の行動</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="level-1">
+                        <td><strong>レベル 1</strong><br>早期注意情報</td>
+                        <td>今後気象状況悪化のおそれ</td>
+                        <td>災害への心構えを高める</td>
+                        <td id="eval-timeline1" class="timeline-action">---</td>
+                    </tr>
+                    <tr class="level-2">
+                        <td><strong>レベル 2</strong><br>大雨・洪水・<br>高潮注意報</td>
+                        <td>気象状況悪化</td>
+                        <td>自らの避難行動の確認</td>
+                        <td id="eval-timeline2" class="timeline-action">---</td>
+                    </tr>
+                    <tr class="level-3">
+                        <td><strong>レベル 3</strong><br><strong>高齢者等避難</strong></td>
+                        <td>災害のおそれあり</td>
+                        <td class="action-highlight"><strong>危険な場所から<br>高齢者等は避難！</strong></td>
+                        <td id="eval-timeline3" class="timeline-action">---</td>
+                    </tr>
+                    <tr class="level-4">
+                        <td><strong>レベル 4</strong><br><strong>避難指示</strong></td>
+                        <td>災害のおそれ高い</td>
+                        <td class="action-highlight"><strong>危険な場所から<br>全員避難！</strong></td>
+                        <td id="eval-timeline4" class="timeline-action">---</td>
+                    </tr>
+                    <tr class="level-5">
+                        <td><strong>レベル 5</strong><br><strong>緊急安全確保</strong></td>
+                        <td>災害発生<br>又は切迫</td>
+                        <td class="action-danger"><strong>命の危険！<br>直ちに安全確保を！</strong></td>
+                        <td id="eval-timeline5" class="timeline-action">---</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <div class="bottom-nav">
+        <a href="index.html" class="btn-home">トップページに戻る</a>
+    </div>
+    <footer>
+        <p>この計画を印刷し、家族全員が見える場所に貼っておきましょう。</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

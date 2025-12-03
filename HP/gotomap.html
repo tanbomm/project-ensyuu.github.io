@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>防災マップ作成</title>
+  <link rel="stylesheet" href="styleA.css" />
+</head>
+<body>
+  <header>
+    <h1>防災マップ作成</h1>
+    <p>防災マップを見ながら、安全なルートを考えよう！</p>
+  </header>
+
+  <main>
+    <section class="map-display">
+      <img id="main-map" src="map1.png" alt="防災マップ" />
+    </section>
+
+    <section class="map-thumbnails">
+      <img src="map1.png" class="thumb active" />
+      <img src="map2.png" class="thumb" />
+      <img src="map3.png" class="thumb" />
+    </section>
+
+    <section class="action-buttons">
+      <a href="evaluation.html" class="btn start">はじめる</a>
+      <a href="index.html" class="btn back">トップにもどる</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 のべおか防災大作戦</p>
+  </footer>
+
+  <script>
+    const mainMap = document.getElementById('main-map');
+    const thumbs = document.querySelectorAll('.thumb');
+
+    thumbs.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => {
+        mainMap.src = thumb.src;
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1276 @@
+/* ======================================== */
+/* 1. メニュー (page-menu) のスタイル        */
+/* ======================================== */
+/* 全体 */
+body.page-menu {
+  font-family: "Yu Gothic", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+/* ヘッダー */
+.page-menu header {
+  background: linear-gradient(to right, #ffcc00, #ff9900);
+  text-align: center;
+  padding: 2em 1em;
+  position: relative;
+  color: #fff;
+}
+
+.page-menu header h1 {
+  font-size: 2.8em;
+  margin: 0;
+  text-shadow: 1px 1px 2px #d35400;
+  /* ↓タイムライン側と競合しないようリセット */
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.page-menu header p {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
+/* 波型の区切り */
+.page-menu header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: url('wave.svg') repeat-x;
+  background-size: contain;
+}
+
+/* グリッドメニュー */
+.page-menu .grid-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  padding: 3em 2em;
+  /* ↓タイムライン側(main)と競合しないようリセット */
+  max-width: none;
+  margin: 0;
+  padding: 3em 2em;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* メニューボックス */
+.page-menu .menu-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2em;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.page-menu .menu-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* 色分け（任意） */
+.page-menu .menu-box:nth-child(1) {
+  border-top: 8px solid #4fc3f7;
+}
+.page-menu .menu-box:nth-child(2) {
+  border-top: 8px solid #81c784;
+}
+.page-menu .menu-box:nth-child(3) {
+  border-top: 8px solid #ffb74d;
+}
+.page-menu .menu-box:nth-child(4) {
+  border-top: 8px solid #ba68c8;
+}
+
+.page-menu .menu-box h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+  /* ↓タイムライン側と競合しないようリセット */
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 0;
+}
+
+.page-menu .menu-box p {
+  font-size: 1em;
+  margin-bottom: 1.2em;
+}
+
+/* ボタン */
+.page-menu .btn {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background-color: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.page-menu .btn:hover {
+  background-color: #f57c00;
+}
+
+/* フッター */
+.page-menu footer {
+  background-color: #ffe0b2;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+  color: #555;
+  /* ↓タイムライン側と競合しないようリセット */
+  margin-top: 0;
+  border-top: none;
+  padding-top: 1em;
+  max-width: none;
+}
+
+/* ======================================= */
+/* 2. ログイン (login-page) のスタイル      */
+/* ======================================= */
+
+/* ログイン画面のbody専用スタイル */
+/* (クラス名を .login-body から .login-page に修正) */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f8ff; 
+  /* ↓他ページと競合しないようリセット */
+  font-family: "Yu Gothic", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ログインフォームのコンテナ */
+.login-page .login-container {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2em 2.5em;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px; 
+}
+
+.login-page .login-container h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  color: #333; 
+  /* ↓他ページと競合しないようリセット */
+  border-bottom: none;
+  padding-bottom: 0;
+  text-shadow: none;
+}
+
+/* フォームの各入力グループ */
+.login-page .form-group {
+  margin-bottom: 1.5em;
+}
+
+.login-page .form-group label {
+  display: block;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #555;
+}
+
+/* テキストボックスのスタイル */
+.login-page .form-group input[type="text"],
+.login-page .form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box; 
+  font-family: "Yu Gothic", sans-serif;
+  font-size: 1em;
+}
+
+/* ボタンのグループ */
+.login-page .button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2em;
+}
+
+/* 「戻る」ボタン用のスタイル */
+.login-page .btn.btn-secondary {
+  background-color: #aaa;
+}
+
+.login-page .btn.btn-secondary:hover {
+  background-color: #888;
+}
+
+.login-page .button-group .btn {
+   width: 48%; 
+   padding-top: 0.8em;
+   padding-bottom: 0.8em;
+   /* .btnの共通スタイルを継承 */
+   display: inline-block;
+   color: white;
+   text-decoration: none;
+   border-radius: 8px;
+   font-weight: bold;
+   transition: background-color 0.3s;
+}
+
+/* ======================================== */
+/* 3. タイムライン (page-timeline) のスタイル */
+/* (ここからが追加するブロック)                */
+/* ======================================== */
+
+/* --- 全体の設定 --- */
+body.page-timeline {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.page-timeline main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.page-timeline header, .page-timeline footer {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.page-timeline header h1 {
+    color: #005a9c;
+    border-bottom: 3px solid #005a9c;
+    padding-bottom: 10px;
+    /* ↓他ページと競合しないようリセット */
+    font-size: revert;
+    margin: revert;
+    text-shadow: none;
+}
+
+.page-timeline footer {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    /* ↓他ページと競合しないようリセット */
+    background-color: transparent;
+    padding: 10px 20px;
+    padding-top: 20px;
+}
+
+.page-timeline h2 {
+    color: #005a9c;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+    margin-top: 0;
+    /* ↓他ページと競合しないようリセット */
+    font-size: revert;
+    margin-bottom: revert;
+}
+
+.page-timeline h3 {
+    color: #333;
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.page-timeline h4 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.page-timeline section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+}
+
+/* --- グリッドレイアウト --- */
+.page-timeline .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.page-timeline .grid-item {
+    min-width: 0; /* グリッドアイテムの最小幅を0に設定 */
+}
+
+/* --- テーブル全般 --- */
+.page-timeline table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.page-timeline th, .page-timeline td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.page-timeline th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* --- フォーム要素 --- */
+.page-timeline input[type="text"],
+.page-timeline input[type="number"],
+.page-timeline input[type="tel"],
+.page-timeline textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* パディングを含めて幅100%にする */
+    font-size: 0.95em;
+    font-family: inherit;
+}
+
+.page-timeline input[type="text"].short-input {
+    width: auto;
+    min-width: 100px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.page-timeline textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+.page-timeline label {
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+.page-timeline input[type="checkbox"],
+.page-timeline input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* --- チェックリスト --- */
+.page-timeline .checklist {
+    list-style-type: none;
+    padding-left: 0;
+}
+.page-timeline .checklist li {
+    margin-bottom: 10px;
+}
+.page-timeline .checklist input[type="text"] {
+    width: calc(100% - 200px); /* ラベルの長さに応じて調整 */
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.page-timeline .two-column {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+.page-timeline .two-column li {
+    break-inside: avoid-column;
+}
+
+/* --- タイムラインテーブル --- */
+.page-timeline .timeline table {
+    table-layout: fixed;
+}
+.page-timeline .timeline th:nth-child(1) { width: 15%; }
+.page-timeline .timeline th:nth-child(2) { width: 20%; }
+.page-timeline .timeline th:nth-child(3) { width: 20%; }
+.page-timeline .timeline th:nth-child(4) { width: 45%; }
+
+.page-timeline .timeline th, .page-timeline .timeline td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+}
+.page-timeline .timeline td:last-child {
+    text-align: left;
+}
+.page-timeline .timeline textarea {
+    width: 100%;
+    font-size: 0.9em;
+    background-color: #fff;
+}
+.page-timeline .timeline .small-note {
+    font-size: 0.85em;
+    color: #d9534f;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+/* 警戒レベルごとの色分け */
+.page-timeline .level-1 { background-color: #f7f7f7; }
+.page-timeline .level-2 { background-color: #fff9e6; }
+.page-timeline .level-3 { background-color: #fff0b3; /* 黄色系 */ border: 2px solid #f0ad4e; }
+.page-timeline .level-4 { background-color: #ffe6e6; /* 赤色系 */ border: 2px solid #d9534f; }
+.page-timeline .level-5 { background-color: #e6e6fa; /* 紫色系 */ border: 2px solid #5d5c61; }
+
+.page-timeline .action-highlight {
+    font-weight: bold;
+    color: #d9534f; /* 赤文字 */
+    font-size: 1.1em;
+}
+.page-timeline .action-danger {
+    font-weight: bold;
+    color: #a94442; /* 暗い赤 */
+    background-color: #f2dede;
+    font-size: 1.1em;
+}
+
+/* ▼▼▼ ボタンスタイルを追加 ▼▼▼ */
+.page-timeline .action-buttons {
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.page-timeline .action-buttons button {
+    font-size: 1.1em;
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.page-timeline #printButton {
+    background-color: #007bff; /* 印刷 (青) */
+    color: white;
+}
+.page-timeline #printButton:hover {
+    background-color: #0056b3;
+}
+
+.page-timeline #saveButton {
+    background-color: #28a745; /* 保存 (緑) */
+    color: white;
+}
+.page-timeline #saveButton:hover {
+    background-color: #1e7e34;
+}
+
+.page-timeline #loadButton {
+    background-color: #ffc107; /* B復元 (黄) */
+    color: #333;
+}
+.page-timeline #loadButton:hover {
+    background-color: #d39e00;
+}
+/* (ここまでが追加するブロック) */
+
+
+/* ======================================== */
+/* 4. 確認・評価 (page-evaluation) のスタイル */
+/* ======================================== */
+
+body.page-evaluation {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7f6;
+  color: #333;
+  margin: 0;
+  padding: 20px; 
+}
+
+/* タイムラインページとヘッダー・フッターのスタイルを共通化 */
+.page-timeline header, .page-timeline footer,
+.page-evaluation header, .page-evaluation footer {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+.page-timeline header h1,
+.page-evaluation header h1 {
+  color: #005a9c;
+  border-bottom: 3px solid #005a9c;
+  padding-bottom: 10px;
+  font-size: revert; 
+  margin: revert;
+  text-shadow: none;
+}
+.page-timeline footer,
+.page-evaluation footer {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  background-color: transparent;
+  padding: 10px 20px; 
+  padding-top: 20px; 
+}
+
+/* タイムラインページとボタンのスタイルを共通化 */
+.page-timeline .action-buttons,
+.page-evaluation .action-buttons {
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+.page-timeline .action-buttons button,
+.page-evaluation .action-buttons button,
+.page-evaluation .action-buttons .btn-edit {
+  font-size: 1.1em;
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  color: #333; /* ボタンのデフォルト文字色 */
+}
+/* タイムラインの印刷ボタンだけ白文字 */
+.page-timeline #printButton, .page-timeline #saveButton {
+    color: white;
+}
+/* 評価画面の印刷ボタンは青文字（または白） */
+.page-evaluation #printButton {
+    background-color: #007bff;
+    color: white;
+}
+.page-evaluation #printButton:hover {
+    background-color: #0056b3;
+}
+
+
+/* 編集ボタンのスタイル */
+.page-evaluation .action-buttons .btn-edit {
+  background-color: #ffc107;
+  color: #333;
+}
+.page-evaluation .action-buttons .btn-edit:hover {
+  background-color: #d39e00;
+}
+
+
+/* 確認画面のグリッド */
+.page-evaluation .evaluation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.page-evaluation .eval-box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+}
+.page-evaluation .eval-box.full-width {
+  grid-column: 1 / -1; /* 1列の時でも全幅 */
+}
+
+.page-evaluation .eval-box h2 {
+  color: #005a9c;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+  margin-top: 0;
+  font-size: revert;
+  margin-bottom: 20px;
+}
+.page-evaluation .eval-box h3 {
+  color: #333;
+  border-left: 5px solid #007bff;
+  padding-left: 10px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+.page-evaluation .eval-box p {
+  font-size: 1.1em;
+  margin: 0 0 10px 0;
+  white-space: pre-wrap; /* 改行を反映させる */
+}
+.page-evaluation .eval-box p:empty::after {
+  content: "---"; /* 空の場合にハイフンを表示 */
+  color: #999;
+}
+
+/* 家族情報・連絡先テーブル */
+.page-evaluation .family-table,
+.page-evaluation .contact-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.page-evaluation .family-table th, .page-evaluation .family-table td,
+.page-evaluation .contact-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+.page-evaluation .family-table th {
+  background-color: #f2f2f2;
+}
+
+/* チェックリスト (タイムラインと共通) */
+.page-timeline .checklist,
+.page-evaluation .checklist {
+  list-style-type: none;
+  padding-left: 0;
+}
+.page-timeline .checklist li,
+.page-evaluation .checklist li {
+  font-size: 1.1em;
+  padding: 5px 0;
+  margin-bottom: 10px; /* タイムライン側から継承 */
+}
+.page-evaluation .checklist li.not-checked {
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* ハザードマップ定義リスト */
+.page-evaluation dl {
+  margin: 0;
+}
+.page-evaluation dt {
+  font-weight: bold;
+  color: #555;
+  margin-top: 10px;
+}
+.page-evaluation dd {
+  font-size: 1.1em;
+  margin-left: 15px;
+}
+.page-evaluation dd:empty::after {
+  content: "---";
+  color: #999;
+}
+
+/* タイムラインテーブル (タイムラインと共通) */
+.page-timeline .timeline,
+.page-evaluation .timeline {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  table-layout: fixed;
+}
+/* タイムラインテーブルの th, td 共通スタイル */
+.page-timeline .timeline th, .page-evaluation .timeline th,
+.page-timeline .timeline td, .page-evaluation .timeline td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+/* タイムラインテーブルの th 共通スタイル */
+.page-timeline .timeline th, .page-evaluation .timeline th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+/* タイムラインテーブルの幅設定 (タイムラインフォーム側) */
+.page-timeline .timeline th:nth-child(1) { width: 15%; }
+.page-timeline .timeline th:nth-child(2) { width: 20%; }
+.page-timeline .timeline th:nth-child(3) { width: 20%; }
+.page-timeline .timeline th:nth-child(4) { width: 45%; }
+
+/* タイムラインテーブルの最後のセル (テキスト入力欄/表示欄) */
+.page-timeline .timeline td:last-child,
+.page-evaluation .timeline td.timeline-action {
+    text-align: left;
+    white-space: pre-wrap; /* 改行をそのまま表示 */
+    vertical-align: top;
+    line-height: 1.5;
+}
+/* タイムラインフォームのテキストエリア */
+.page-timeline .timeline textarea {
+    width: 100%;
+    font-size: 0.9em;
+    background-color: #fff;
+    min-height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.page-timeline .timeline .small-note {
+    font-size: 0.85em;
+    color: #d9534f;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+/* レベル別色分け (共通) */
+.page-timeline .level-1, .page-evaluation .level-1 { background-color: #f7f7f7; }
+.page-timeline .level-2, .page-evaluation .level-2 { background-color: #fff9e6; }
+.page-timeline .level-3, .page-evaluation .level-3 { background-color: #fff0b3; border: 2px solid #f0ad4e; }
+.page-timeline .level-4, .page-evaluation .level-4 { background-color: #ffe6e6; border: 2px solid #d9534f; }
+.page-timeline .level-5, .page-evaluation .level-5 { background-color: #e6e6fa; border: 2px solid #5d5c61; }
+
+/* アクションハイライト (共通) */
+.page-timeline .action-highlight, .page-evaluation .action-highlight {
+  font-weight: bold;
+  color: #d9534f;
+  font-size: 1.1em;
+}
+.page-timeline .action-danger, .page-evaluation .action-danger {
+  font-weight: bold;
+  color: #a94442;
+  background-color: #f2dede;
+  font-size: 1.1em;
+}
+
+
+/* ======================================== */
+/* 5. 評価画面・下部ボタンのスタイル         */
+/* ======================================== */
+
+.page-evaluation .bottom-nav {
+  max-width: 1200px;
+  margin: 10px auto 30px auto; /* メインコンテンツとフッターの間の余白 */
+  text-align: center;
+}
+
+.page-evaluation .btn-home {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  
+  background-color: #6c757d; /* グレー系の色 */
+  color: white;
+  border: none;
+}
+
+.page-evaluation .btn-home:hover {
+  background-color: #5a6268;
+}
+
+/* ======================================== */
+/* 6. 印刷用スタイル (共通)                 */
+/* ======================================== */
+@media print {
+  /* タイムラインページと確認ページのみ印刷 */
+  body.page-timeline,
+  body.page-evaluation {
+      padding: 0;
+      background-color: #fff;
+      font-size: 10pt;
+      /* ↓他ページから継承した可能性のある設定をリセット */
+      display: block; 
+      min-height: 0;
+  }
+  .page-timeline main,
+  .page-evaluation .evaluation-grid { /* 評価画面はmainタグではないため */
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      display: grid; /* グリッドを維持 */
+  }
+  .page-timeline header, .page-timeline footer,
+  .page-evaluation header, .page-evaluation footer {
+      text-align: left;
+      border-top: none;
+      margin-top: 0;
+      color: #000;
+  }
+  .page-evaluation header { /* 確認画面のヘッダーは非表示 */
+      display: none;
+  }
+  
+  .page-timeline .action-buttons,
+  .page-evaluation .action-buttons {
+      display: none; /* ボタンを非表示 */
+  }
+
+  .page-timeline section,
+  .page-evaluation .eval-box {
+      border: 1px solid #999;
+      padding: 15px;
+      page-break-inside: avoid;
+      box-shadow: none;
+      background-color: #fff;
+  }
+  .page-timeline .grid-container,
+  .page-evaluation .evaluation-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+  }
+  
+  .page-timeline h1, .page-timeline h2, .page-timeline h3,
+  .page-evaluation h1, .page-evaluation h2, .page-evaluation h3 {
+      color: #000;
+  }
+  /* フォーム要素を印刷用に調整 (タイムライン側) */
+  .page-timeline input[type="text"],
+  .page-timeline input[type="number"],
+  .page-timeline input[type="tel"],
+  .page-timeline textarea {
+      border: 1px dashed #999;
+      background-color: #f9f9f9;
+      padding: 6px;
+  }
+  .page-timeline textarea {
+      min-height: 60px;
+  }
+  /* タイムラインの色を白黒印刷でも見やすく調整 (共通) */
+  .page-timeline .level-1, .page-timeline .level-2, .page-timeline .level-3, .page-timeline .level-4, .page-timeline .level-5,
+  .page-evaluation .level-1, .page-evaluation .level-2, .page-evaluation .level-3, .page-evaluation .level-4, .page-evaluation .level-5 {
+      background-color: #fff !important;
+  }
+  .page-timeline .level-3, .page-timeline .level-4, .page-timeline .level-5,
+  .page-evaluation .level-3, .page-evaluation .level-4, .page-evaluation .level-5 {
+      border: 2px solid #666;
+  }
+  .page-timeline .action-highlight, .page-timeline .action-danger,
+  .page-evaluation .action-highlight, .page-evaluation .action-danger {
+      color: #000 !important;
+      background-color: #eee !important;
+      border: 1px solid #333;
+  }
+  .page-timeline .timeline th, .page-timeline .timeline td,
+  .page-evaluation .timeline th, .page-evaluation .timeline td {
+      padding: 8px;
+  }
+  .page-timeline .two-column,
+  .page-evaluation .two-column { /* 評価画面にもしあれば */
+      columns: 1;
+  }
+
+  /* メニューページとログインページは印刷しない */
+  body.page-menu,
+  body.login-page {
+      display: none;
+  }
+}
+
+/* --- ▼▼▼ ここからポップなデザインの基本設定 ▼▼▼ --- */
+
+/* --- 全体の設定 --- */
+body {
+  /* フォント指定：ポップな DotGothic16 を最優先にし、ない場合は標準のフォントを使う */
+  font-family: 'DotGothic16', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.6;
+  background-color: #e0f7fa; /* 明るい水色 */
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 20px; /* 丸みを強調 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* 影を大きく */
+}
+
+header, footer {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+}
+
+header h1 {
+  color: #007bff; /* 青色 */
+  border-bottom: 5px solid #ffeb3b; /* 黄色の太い線 */
+  padding-bottom: 15px;
+  font-size: 2.5em; /* 大きな文字 */
+  margin-bottom: 10px;
+  letter-spacing: 2px; /* 文字間隔 */
+}
+
+/* HTML側で追加したサブタイトル用のスタイル */
+.header-subtitle {
+  font-size: 1.2em;
+  color: #555;
+  margin-top: 0;
+}
+
+footer {
+  font-size: 1.1em; /* 大きめ */
+  color: #777;
+  margin-top: 30px;
+  border-top: 2px dashed #bbdefb; /* 点線に */
+  padding-top: 20px;
+}
+
+h2 {
+  color: #005a9c;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+h3 {
+  color: #e91e63; /* ポップなピンク */
+  border-left: 8px solid #4caf50; /* 緑の太い線 */
+  padding-left: 15px;
+  margin-top: 25px;
+  font-size: 1.8em; /* 大きな文字 */
+  border-radius: 5px; /* 角を少し丸く */
+}
+
+h4 {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+section {
+  padding: 20px;
+  border: 2px solid #b3e5fc; /* 明るい水色の枠線 */
+  border-radius: 15px; /* 丸みを強調 */
+  background-color: #f8fcff; /* ごく薄い水色 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* 少し影をつける */
+  transition: transform 0.2s ease-in-out; /* ホバーでアニメーション */
+  margin-bottom: 0; /* グリッドのgapで調整するため、個別のmarginは0に */
+}
+
+section:hover {
+  transform: translateY(-5px); /* ホバーで少し浮き上がる */
+}
+
+/* リンク集のための追加スタイル */
+.site-list p {
+  margin: 8px 0;
+  font-size: 1.1em; /* 全体的に大きく */
+}
+.site-list strong {
+  display: inline-block;
+  min-width: 80px; /* 出典の表示を揃える */
+  color: #3f51b5; /* 濃い青 */
+  font-weight: bold;
+}
+.site-list a {
+  color: #ff9800; /* オレンジ色のリンク */
+  text-decoration: none;
+  font-weight: bold;
+  word-break: break-all;
+  transition: color 0.2s ease-in-out;
+}
+.site-list a:hover {
+  text-decoration: underline;
+  color: #f57c00; /* ホバーで濃いオレンジ */
+}
+
+/* --- グリッドレイアウト --- */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ポップ版の指定（300px） */
+  gap: 25px;
+}
+
+.grid-item {
+  min-width: 0; /* グリッドアイテムの最小幅を0に設定 */
+}
+
+
+/* --- ▲▲▲ ここまでポップなデザインの基本設定 ▲▲▲ --- */
+
+
+/* --- ▼▼▼ ここから元のCSSの要素（そのまま保持） ▼▼▼ --- */
+/* (テーブル、フォーム、タイムライン、ボタンなど) */
+
+/* --- テーブル全般 --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: #fff; /* ポップなデザインに合わせて背景色を追加 */
+  border-radius: 8px; /* 角を丸く */
+  overflow: hidden; /* 角丸を適用するため */
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* --- フォーム要素 --- */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px; /* 少し大きめに */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* 角を丸く */
+  box-sizing: border-box; 
+  font-size: 0.95em;
+  font-family: inherit; /* bodyのフォントを継承 */
+}
+
+input[type="text"].short-input {
+  width: auto;
+  min-width: 100px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+
+label {
+  margin-right: 15px;
+  font-weight: 500;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* --- チェックリスト --- */
+.checklist {
+  list-style-type: none;
+  padding-left: 0;
+}
+.checklist li {
+  margin-bottom: 10px;
+}
+.checklist input[type="text"] {
+  width: calc(100% - 200px); 
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.two-column {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+.two-column li {
+  break-inside: avoid-column;
+}
+
+/* --- タイムラインテーブル --- */
+.timeline table {
+  table-layout: fixed;
+}
+.timeline th:nth-child(1) { width: 15%; }
+.timeline th:nth-child(2) { width: 20%; }
+.timeline th:nth-child(3) { width: 20%; }
+.timeline th:nth-child(4) { width: 45%; }
+
+.timeline th, .timeline td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px;
+}
+.timeline td:last-child {
+  text-align: left;
+}
+.timeline textarea {
+  width: 100%;
+  font-size: 0.9em;
+  background-color: #fff;
+}
+.timeline .small-note {
+  font-size: 0.85em;
+  color: #d9534f;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  text-align: center;
+}
+
+/* 警戒レベルごとの色分け */
+.level-1 { background-color: #f7f7f7; }
+.level-2 { background-color: #fff9e6; }
+.level-3 { background-color: #fff0b3; /* 黄色系 */ border: 2px solid #f0ad4e; }
+.level-4 { background-color: #ffe6e6; /* 赤色系 */ border: 2px solid #d9534f; }
+.level-5 { background-color: #e6e6fa; /* 紫色系 */ border: 2px solid #5d5c61; }
+
+.action-highlight {
+  font-weight: bold;
+  color: #d9534f; /* 赤文字 */
+  font-size: 1.1em;
+}
+.action-danger {
+  font-weight: bold;
+  color: #a94442; /* 暗い赤 */
+  background-color: #f2dede;
+  font-size: 1.1em;
+}
+
+/* ▼▼▼ ボタンスタイルを追加 ▼▼▼ */
+.action-buttons {
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.action-buttons button {
+  font-size: 1.1em;
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px; /* 角を丸く */
+  cursor: pointer;
+  font-weight: bold;
+  font-family: inherit; /* フォントを継承 */
+  transition: transform 0.2s, box-shadow 0.2s; /* アニメーション */
+}
+
+.action-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#printButton {
+  background-color: #007bff; /* 印刷 (青) */
+  color: white;
+}
+#printButton:hover {
+  background-color: #0056b3;
+}
+
+#saveButton {
+  background-color: #28a745; /* 保存 (緑) */
+  color: white;
+}
+#saveButton:hover {
+  background-color: #1e7e34;
+}
+
+#loadButton {
+  background-color: #ffc107; /* 復元 (黄) */
+  color: #333;
+}
+#loadButton:hover {
+  background-color: #d39e00;
+}
+/* ▲▲▲ ここまで追加 ▲▲▲ */
+
+
+/* --- 印刷用スタイル --- */
+@media print {
+  body {
+      padding: 0;
+      background-color: #fff;
+      font-size: 10pt;
+      font-family: sans-serif; /* 印刷時は標準フォントに */
+  }
+  main {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+  }
+  header, footer {
+      text-align: left;
+  }
+  
+  /* ▼▼▼ 印刷時にボタンを非表示 ▼▼▼ */
+  .action-buttons {
+      display: none;
+  }
+  /* ▲▲▲ ここまで追加 ▲▲▲ */
+
+  section {
+      border: 1px solid #999;
+      padding: 15px;
+      page-break-inside: avoid; 
+      box-shadow: none;
+      background-color: #fff;
+  }
+  .grid-container {
+      grid-template-columns: 1fr 1fr; /* 印刷時は2カラムに固定 */
+      gap: 20px;
+  }
+  h1, h2, h3 {
+      color: #000;
+      border-bottom: 2px solid #000;
+      border-left: none;
+  }
+  /* フォーム要素を印刷用に調整 */
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  textarea {
+      border: 1px dashed #999;
+      background-color: #f9f9f9;
+      padding: 6px;
+  }
+  textarea {
+      min-height: 60px; 
+  }
+  /* タイムラインの色を白黒印刷でも見やすく調整 */
+  .level-1, .level-2, .level-3, .level-4, .level-5 {
+      background-color: #fff !important;
+  }
+  .level-3, .level-4, .level-5 {
+      border: 2px solid #666;
+  }
+  .action-highlight, .action-danger {
+      color: #000 !important;
+      background-color: #eee !important;
+      border: 1px solid #333;
+  }
+  .timeline th, .timeline td {
+      padding: 8px;
+  }
+  .two-column {
+      columns: 1; /* 印刷時は1カラムに戻す */
+  }
+}
+
+/* --- ▲▲▲ ここまで元のCSSの要素（そのまま保持） ▲▲▲ --- */
